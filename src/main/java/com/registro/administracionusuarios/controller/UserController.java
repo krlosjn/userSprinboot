@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RequestMapping("/users")
@@ -38,6 +37,16 @@ public class UserController {
     @GetMapping("/name/{name}")
     public User findUserByName(@PathVariable("name") String name){
         return userService.findUserByName(name);
+    }
+
+    @DeleteMapping("/{id_user}")
+    public ResponseEntity<ResponseUserMessage> deleteUser(@PathVariable("id_user") Long id){
+        return userService.deleteUser(id);
+    }
+
+    @PutMapping("/{id_user}")
+    public ResponseEntity<ResponseUserMessage> updateUser(@RequestBody User user, @PathVariable("id_user") Long id){
+        return userService.updateUser(user,id);
     }
 
 
