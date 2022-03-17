@@ -3,6 +3,7 @@ package com.registro.administracionusuarios.controller;
 import com.registro.administracionusuarios.entity.User;
 import com.registro.administracionusuarios.response.ResponseUserMessage;
 import com.registro.administracionusuarios.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
+    @Autowired
     private UserService userService;
 
     public  UserController (UserService userService){

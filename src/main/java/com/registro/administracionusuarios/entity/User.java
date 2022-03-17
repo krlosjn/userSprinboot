@@ -3,9 +3,16 @@ package com.registro.administracionusuarios.entity;
 
 import javax.persistence.*;
 
+import static com.registro.administracionusuarios.utils.ValidationUser.validaEdad;
+import static com.registro.administracionusuarios.utils.ValidationUser.validarArgumentosObligatorios;
+
 @Entity
 @Table(name="User")
 public class User {
+
+    public static final String EL_NOMBRE_NO_PUEDE_ESTAR_VACÍO = "EL nombre no puede estar vacío";
+    public static final String EL_APELLIDO_NO_PUEDE_ESTAR_VACIO = "El apellido no puede estar vacio";
+    public static final String LA_EDAD_NO_PUEDE_IR_VACÍA = "La edad no puede ir vacía";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,11 +31,14 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String name, String lastName, int edad) {
+    public User(Long id, String name, String lastName, int age) throws Exception {
+        validarArgumentosObligatorios(name, EL_NOMBRE_NO_PUEDE_ESTAR_VACÍO);
+        validarArgumentosObligatorios(lastName, EL_APELLIDO_NO_PUEDE_ESTAR_VACIO);
+        validaEdad(age, LA_EDAD_NO_PUEDE_IR_VACÍA);
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        this.age = edad;
+        this.age = age;
     }
 
     public User(Long id){
@@ -69,19 +79,9 @@ public class User {
 
 
     public boolean validateEqualUser(User user){
-        if(this.name.equalsIgnoreCase(user.name) && this.lastName.equalsIgnoreCase(user.lastName) && this.age==user.age){
+        if(this.name.equalsIgnoreCase(user.name) && this.lastName.equalsIgnoreCase(user.lastName) && this.age==user.getAge()){
             return true;
         }
         return false;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
     }
 }

@@ -36,7 +36,7 @@ public class UserTestDataBuilder {
         return this;
     }
 
-    public User build(){
+    public User build() throws Exception{
         return new User(id,name,lastName,age);
     }
 }
