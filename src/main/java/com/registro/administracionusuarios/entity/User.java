@@ -10,7 +10,7 @@ import static com.registro.administracionusuarios.utils.ValidationUser.validarAr
 @Table(name="User")
 public class User {
 
-    public static final String EL_NOMBRE_NO_PUEDE_ESTAR_VACÍO = "EL nombre no puede estar vacío";
+    public static final String EL_NOMBRE_NO_PUEDE_ESTAR_VACIO = "EL nombre no puede estar vacío";
     public static final String EL_APELLIDO_NO_PUEDE_ESTAR_VACIO = "El apellido no puede estar vacio";
     public static final String LA_EDAD_NO_PUEDE_IR_VACÍA = "La edad no puede ir vacía";
 
@@ -32,7 +32,7 @@ public class User {
     }
 
     public User(Long id, String name, String lastName, int age) throws Exception {
-        validarArgumentosObligatorios(name, EL_NOMBRE_NO_PUEDE_ESTAR_VACÍO);
+        validarArgumentosObligatorios(name, EL_NOMBRE_NO_PUEDE_ESTAR_VACIO);
         validarArgumentosObligatorios(lastName, EL_APELLIDO_NO_PUEDE_ESTAR_VACIO);
         validaEdad(age, LA_EDAD_NO_PUEDE_IR_VACÍA);
         this.id = id;
@@ -76,7 +76,6 @@ public class User {
     public void setAge(int age) {
         this.age = age;
     }
-
 
     public boolean validateEqualUser(User user){
         if(this.name.equalsIgnoreCase(user.name) && this.lastName.equalsIgnoreCase(user.lastName) && this.age==user.getAge()){
