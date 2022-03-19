@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-
-import javax.xml.ws.Response;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -77,4 +75,19 @@ class UserServiceImplTest {
         //arrange
         assertEquals(200, updateUser.getStatusCodeValue());
     }
+
+    @Test
+    public void findUserByName() throws Exception{
+        //arrange
+        User userName= new UserTestDataBuilder().build();
+        String nameToFind="Carlos";
+        UserService userService=Mockito.mock(UserService.class);
+        Mockito.when(userService.findUserByName(nameToFind)).thenReturn(userName);
+        //act
+        User userFind = userService.findUserByName(nameToFind);
+        //assert
+        assertEquals("Carlos",userFind.getName());
+    }
+
+
 }
