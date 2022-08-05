@@ -12,10 +12,6 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Cuando se utiliza la anotación @Service, no se puede usar @Bean , ya que
- * infiere dos bean al mismo objeto.
- * **/
 
 public class UserServiceImpl implements UserService {
 

@@ -10,7 +10,10 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
-    boolean existsUserById(Long id);
+    @Query(value="select * from User WHERE id=?",nativeQuery=true)
+    boolean userById(Long id);
+
+    //boolean existsUserById(Long id);
 
     @Query("SELECT u FROM  User u WHERE u.name=?1")
     User findUserByName(String name);
