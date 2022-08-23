@@ -6,6 +6,9 @@ import javax.persistence.*;
 import static com.registro.administracionusuarios.utils.ValidationUser.validaEdad;
 import static com.registro.administracionusuarios.utils.ValidationUser.validarArgumentosObligatorios;
 
+/**
+ * @Table: Se usa cuando el nombre de la tabla es diferente a la entidad en la clase Java
+ * **/
 @Entity
 @Table(name="User")
 public class User {
@@ -13,6 +16,12 @@ public class User {
     public static final String EL_NOMBRE_NO_PUEDE_ESTAR_VACIO = "EL nombre no puede estar vacío";
     public static final String EL_APELLIDO_NO_PUEDE_ESTAR_VACIO = "El apellido no puede estar vacio";
     public static final String LA_EDAD_NO_PUEDE_IR_VACÍA = "La edad no puede ir vacía";
+
+
+    /**
+     * @Auhtor: Carlos Junco
+     * @Column se usa cuando el atributo tiene un nombre diferente a la columna de la tabla
+     * **/
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

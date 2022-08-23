@@ -9,13 +9,6 @@ import javax.xml.ws.Response;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * Cuando se utiliza la anotación @Service, no se puede usar @Bean , ya que
- * infiere dos bean al mismo objeto.
- acá iría la anotación @Service
- * **/
-
-@Component
 public interface UserService {
     ResponseEntity<ResponseUserMessage> saveUser(User user);
     ResponseEntity<ResponseUserMessage> findUser(Long id);

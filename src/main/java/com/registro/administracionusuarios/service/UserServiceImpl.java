@@ -9,13 +9,16 @@ import com.registro.administracionusuarios.response.ResponseUserMessageOk;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 import java.util.Optional;
 
-
+@Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    //@Autowired
     private UserRepository userRepository;
 
     public UserServiceImpl(UserRepository userRepository){
@@ -23,9 +26,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public ResponseEntity<ResponseUserMessage> saveUser(User user) {
         if(userRepository.existsUserById(user.getId())){
-            String message="El usuario con identificación " + user.getId() + "" +
+            String message="El usuario con id " + user.getId() + "" +
                     "ya se encuentra registrado, no se puede insertar ";
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseUserMessageError(message));
         }
@@ -34,6 +38,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ResponseEntity<ResponseUserMessage> findUser(Long id) {
         if(!userRepository.existsUserById(id)){
             String message="Ha ocucurrido un error encontrando el usuario con id " + id;
@@ -44,16 +49,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<User> findAllusers() {
         return userRepository.findAll();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User findUserByName(String name) {
         return userRepository.findUserByName(name);
     }
 
     @Override
+    @Transactional
     public ResponseEntity<ResponseUserMessage> deleteUser(Long id) {
         if(!userRepository.existsUserById(id)){
             String message="No se puede eliminar el usuario con id " + id + "" +
@@ -67,6 +75,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public ResponseEntity<ResponseUserMessage> updateUser(User newUser, Long id) {
         if(!userRepository.existsUserById(id)){
             String message="El usuario con id " + id  +
@@ -85,7 +94,7 @@ public class UserServiceImpl implements UserService {
             user.setLastName(newUser.getLastName());
             user.setAge(newUser.getAge());
             return userRepository.save(user);
-        }).get();
+        }).orElse(null);
         return userUpdate;
     }
 }

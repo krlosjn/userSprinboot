@@ -7,13 +7,13 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
+//@Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 
-    @Query(value="select * from User WHERE id=?",nativeQuery=true)
-    boolean userById(Long id);
-
-    //boolean existsUserById(Long id);
+    //validar después esta caracteristica
+    //@Query(value="SELECT id FROM User WHERE id=?",nativeQuery=true)
+    //boolean userById(Long id);
+    boolean existsUserById(Long id);
 
     @Query("SELECT u FROM  User u WHERE u.name=?1")
     User findUserByName(String name);

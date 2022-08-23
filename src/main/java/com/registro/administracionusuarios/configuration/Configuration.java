@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Bean;
 
 @org.springframework.context.annotation.Configuration
 public class Configuration {
-    private UserRepository userRepository;
+    /*private UserRepository userRepository;
     public Configuration(UserRepository userRepository){
         this.userRepository=userRepository;
     }
     @Bean
     public UserService userDependency(){
         return new UserServiceImpl(userRepository);
-    }
+    }*/
 }
