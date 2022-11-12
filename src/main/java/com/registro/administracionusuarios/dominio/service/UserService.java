@@ -1,13 +1,10 @@
-package com.registro.administracionusuarios.service;
+package com.registro.administracionusuarios.dominio.service;
 
-import com.registro.administracionusuarios.entity.User;
-import com.registro.administracionusuarios.response.ResponseUserMessage;
+import com.registro.administracionusuarios.dominio.entity.User;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessage;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 
-import javax.xml.ws.Response;
 import java.util.List;
-import java.util.Optional;
 
 public interface UserService {
     ResponseEntity<ResponseUserMessage> saveUser(User user);

@@ -1,6 +1,6 @@
 package com.registro.administracionusuarios.entity.testdatabuilder;
 
-import com.registro.administracionusuarios.entity.User;
+import com.registro.administracionusuarios.dominio.entity.User;
 
 public class UserTestDataBuilder {
     private Long id;

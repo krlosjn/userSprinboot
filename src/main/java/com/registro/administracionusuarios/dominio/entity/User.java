@@ -1,10 +1,10 @@
-package com.registro.administracionusuarios.entity;
+package com.registro.administracionusuarios.dominio.entity;
 
 
 import javax.persistence.*;
 
-import static com.registro.administracionusuarios.utils.ValidationUser.validaEdad;
-import static com.registro.administracionusuarios.utils.ValidationUser.validarArgumentosObligatorios;
+import static com.registro.administracionusuarios.dominio.dominioutils.ValidationUser.validaEdad;
+import static com.registro.administracionusuarios.dominio.dominioutils.ValidationUser.validarArgumentosObligatorios;
 
 /**
  * @Table: Se usa cuando el nombre de la tabla es diferente a la entidad en la clase Java

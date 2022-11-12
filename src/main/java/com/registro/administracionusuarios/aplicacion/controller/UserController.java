@@ -1,9 +1,8 @@
-package com.registro.administracionusuarios.controller;
+package com.registro.administracionusuarios.aplicacion.controller;
 
-import com.registro.administracionusuarios.entity.User;
-import com.registro.administracionusuarios.response.ResponseUserMessage;
-import com.registro.administracionusuarios.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.registro.administracionusuarios.dominio.entity.User;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessage;
+import com.registro.administracionusuarios.dominio.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

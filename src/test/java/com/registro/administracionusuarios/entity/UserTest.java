@@ -1,5 +1,6 @@
 package com.registro.administracionusuarios.entity;
 
+import com.registro.administracionusuarios.dominio.entity.User;
 import com.registro.administracionusuarios.entity.testdatabuilder.UserTestDataBuilder;
 import org.junit.jupiter.api.Test;
 

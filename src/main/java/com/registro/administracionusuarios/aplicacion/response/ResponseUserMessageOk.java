@@ -1,7 +1,7 @@
-package com.registro.administracionusuarios.response;
+package com.registro.administracionusuarios.aplicacion.response;
 
 
-import com.registro.administracionusuarios.entity.User;
+import com.registro.administracionusuarios.dominio.entity.User;
 
 import java.util.Optional;
 

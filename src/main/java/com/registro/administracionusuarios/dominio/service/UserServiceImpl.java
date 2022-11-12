@@ -1,12 +1,11 @@
-package com.registro.administracionusuarios.service;
+package com.registro.administracionusuarios.dominio.service;
 
-import com.registro.administracionusuarios.entity.User;
-import com.registro.administracionusuarios.repository.UserRepository;
-import com.registro.administracionusuarios.response.ResponseMessageDeleteUser;
-import com.registro.administracionusuarios.response.ResponseUserMessage;
-import com.registro.administracionusuarios.response.ResponseUserMessageError;
-import com.registro.administracionusuarios.response.ResponseUserMessageOk;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.registro.administracionusuarios.dominio.entity.User;
+import com.registro.administracionusuarios.datosrepository.UserRepository;
+import com.registro.administracionusuarios.aplicacion.response.ResponseMessageDeleteUser;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessage;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessageError;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessageOk;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

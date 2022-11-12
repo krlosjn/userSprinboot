@@ -1,4 +1,4 @@
-package com.registro.administracionusuarios.utils;
+package com.registro.administracionusuarios.dominio.dominioutils;
 
 public class ValidationUser {
 

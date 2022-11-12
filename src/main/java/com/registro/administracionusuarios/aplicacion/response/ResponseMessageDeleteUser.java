@@ -1,4 +1,4 @@
-package com.registro.administracionusuarios.response;
+package com.registro.administracionusuarios.aplicacion.response;
 
 public class ResponseMessageDeleteUser extends ResponseUserMessage{
 

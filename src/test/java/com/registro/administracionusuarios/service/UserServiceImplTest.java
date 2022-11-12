@@ -1,10 +1,11 @@
 package com.registro.administracionusuarios.service;
 
-import com.registro.administracionusuarios.entity.User;
+import com.registro.administracionusuarios.dominio.entity.User;
+import com.registro.administracionusuarios.dominio.service.UserService;
 import com.registro.administracionusuarios.entity.testdatabuilder.UserTestDataBuilder;
-import com.registro.administracionusuarios.response.ResponseMessageDeleteUser;
-import com.registro.administracionusuarios.response.ResponseUserMessage;
-import com.registro.administracionusuarios.response.ResponseUserMessageOk;
+import com.registro.administracionusuarios.aplicacion.response.ResponseMessageDeleteUser;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessage;
+import com.registro.administracionusuarios.aplicacion.response.ResponseUserMessageOk;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.http.HttpStatus;
